@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Button } from '@material-ui/core';
+import React, { useState } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface Props {
+    setCount: Function,
+    count: number
+}
+
+const MyButton: React.FC<Props> = props =>{
+
+    const plusOne = () => {
+        props.setCount(props.count + 1)
+    }
+
+    return (
+        <Button variant="contained" color="primary" onClick={plusOne}>
+        カウントアップ
+        </Button>
+    )
+}
+
+const initPoint = 0
+
+const App: React.FC = () => {
+
+    const [count, setCount] = useState(initPoint)
+
+    return (
+        <div className="App">
+            <p>ハロー　React!</p>
+            <MyButton setCount={setCount} count={count} />
+            <p>カウント: {count}</p>
+        </div>
+    )
 }
 
 export default App;

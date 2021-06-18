@@ -27,7 +27,7 @@ const App: React.FC = () => {
 
     return (
         <div className="App">
-            <p>ハロー　React!</p>
+            <p>Hello TypeScript & Firebase!</p>
             <MyButton setCount={setCount} count={count} />
             <p>カウント: {count}</p>
         </div>

@@ -19,11 +19,11 @@ const MyButton: React.FC<Props> = props =>{
     )
 }
 
-const initPoint = 0
+const initCount = 0
 
 const App: React.FC = () => {
 
-    const [count, setCount] = useState(initPoint)
+    const [count, setCount] = useState(initCount)
 
     return (
         <div className="App">
